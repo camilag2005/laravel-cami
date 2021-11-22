@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/formulario', function () {
     return view('formulario');
 });
+
+Route::get('/formulario', [App\Http\Controllers\CamilaController::class, 'Guardar'])->name('formulario');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
